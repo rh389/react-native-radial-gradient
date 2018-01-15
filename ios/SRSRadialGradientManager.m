@@ -8,7 +8,7 @@ RCT_EXPORT_MODULE();
 
 @synthesize bridge = _bridge;
 
-- (UIView *)view
+- (SRSRadialGradient *)view
 {
     return [[SRSRadialGradient alloc] init];
 }
@@ -19,8 +19,11 @@ RCT_EXPORT_MODULE();
 }
 
 RCT_EXPORT_VIEW_PROPERTY(colors, NSArray);
-RCT_EXPORT_VIEW_PROPERTY(startPoint, CGPoint);
-RCT_EXPORT_VIEW_PROPERTY(endPoint, CGPoint);
-RCT_EXPORT_VIEW_PROPERTY(locations, NSArray);
+RCT_CUSTOM_VIEW_PROPERTY(center, CGPoint, SRSRadialGradient)
+{
+    view.gradientCenter = [RCTConvert CGPoint:json];
+}
+RCT_EXPORT_VIEW_PROPERTY(radius, CGFloat);
+RCT_EXPORT_VIEW_PROPERTY(stops, NSArray);
 
 @end

@@ -1,43 +1,68 @@
 #import "SRSRadialGradient.h"
 #import <React/RCTConvert.h>
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
+#import "SRSRadialGradientLayer.h"
 
 @implementation SRSRadialGradient
 
 + (Class)layerClass
 {
-    return [CAGradientLayer class];
+    return [SRSRadialGradientLayer class];
 }
 
-- (CAGradientLayer *)gradientLayer
+- (SRSRadialGradientLayer *)gradientLayer
 {
-    return (CAGradientLayer *)self.layer;
+    return (SRSRadialGradientLayer *)self.layer;
 }
 
 - (void)setColors:(NSArray *)colorStrings
 {
+    _colors = colorStrings;
+
     NSMutableArray *colors = [NSMutableArray arrayWithCapacity:colorStrings.count];
-    for (NSString *colorString in colorStrings) {
-        [colors addObject:(id)[RCTConvert UIColor:colorString].CGColor];
+    for (NSString *colorString in colorStrings)
+    {
+        if ([colorString isKindOfClass:UIColor.class])
+        {
+            [colors addObject:(UIColor *)colorString];
+        }
+        else
+        {
+            [colors addObject:(id)[RCTConvert UIColor:colorString].CGColor];
+        }
     }
     self.gradientLayer.colors = colors;
 }
 
-- (void)setStartPoint:(CGPoint)startPoint
+- (void)setGradientCenter:(CGPoint)center
 {
-    self.gradientLayer.startPoint = startPoint;
+    _gradientCenter = center;
+    self.gradientLayer.startCenter = center;
+    self.gradientLayer.endCenter = center;
 }
 
-- (void)setEndPoint:(CGPoint)endPoint
+- (void)setRadius:(CGFloat)radius
 {
-    self.gradientLayer.endPoint = endPoint;
+    _radius = radius;
+    self.gradientLayer.startRadius = 0;
+    self.gradientLayer.endRadius = radius;
 }
 
-- (void)setLocations:(NSArray *)locations
+- (void)setStops:(NSArray *)stops
 {
-    self.gradientLayer.locations = locations;
+    _stops = stops;
+    self.gradientLayer.locations = stops;
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector
+{
+    if (aSelector == @selector(displayLayer:))
+    {
+        return NO;
+    }
+
+    return [super respondsToSelector:aSelector];
 }
 
 @end
-  
+

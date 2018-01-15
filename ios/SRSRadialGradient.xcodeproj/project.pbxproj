@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* SRSRadialGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* SRSRadialGradient.m */; };
 		D44F7758200944100051B20B /* SRSRadialGradientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44F7757200944100051B20B /* SRSRadialGradientManager.m */; };
+		D44F775B200D01CE0051B20B /* SRSRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D44F775A200D01CE0051B20B /* SRSRadialGradientLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		B3E7B5891CC2AC0600A0062D /* SRSRadialGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRSRadialGradient.m; sourceTree = "<group>"; };
 		D44F7757200944100051B20B /* SRSRadialGradientManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRSRadialGradientManager.m; sourceTree = "<group>"; };
 		D44F77592009442A0051B20B /* SRSRadialGradientManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRSRadialGradientManager.h; sourceTree = "<group>"; };
+		D44F775A200D01CE0051B20B /* SRSRadialGradientLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SRSRadialGradientLayer.m; sourceTree = "<group>"; };
+		D44F775C200D01E20051B20B /* SRSRadialGradientLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRSRadialGradientLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				D44F775C200D01E20051B20B /* SRSRadialGradientLayer.h */,
+				D44F775A200D01CE0051B20B /* SRSRadialGradientLayer.m */,
 				D44F77592009442A0051B20B /* SRSRadialGradientManager.h */,
 				D44F7757200944100051B20B /* SRSRadialGradientManager.m */,
 				B3E7B5881CC2AC0600A0062D /* SRSRadialGradient.h */,
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* SRSRadialGradient.m in Sources */,
+				D44F775B200D01CE0051B20B /* SRSRadialGradientLayer.m in Sources */,
 				D44F7758200944100051B20B /* SRSRadialGradientManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
