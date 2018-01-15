@@ -1,7 +1,7 @@
 {
-  "name": "react-native-radial-gradient",
-  "version": "1.0.1",
-  "description": "Radial gradient library for react native",
+  "name": "@rh389/react-native-radial-gradient",
+  "version": "1.1.0",
+  "description": "Radial gradient library for react native (forked from https://npm.org/react-native-radial-gradient)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
 		"type": "git",
-		"url": "https://github.com/surajitsarkar19/react-native-radial-gradient.git"
+		"url": "https://github.com/rh389/react-native-radial-gradient.git"
 	},
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0",
